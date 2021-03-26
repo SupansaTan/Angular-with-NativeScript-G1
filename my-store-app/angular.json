@@ -3,15 +3,15 @@
   "version": 1,
   "newProjectRoot": "projects",
   "cli": {
-    "defaultCollection": "@nativescript/schematics"
+    "analytics": "d81b6cb6-3057-4d11-b7d5-2dd837d079c9"
   },
   "projects": {
-    "blank": {
+    "my-store-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "ns"
     }
   },
-  "defaultProject": "blank"
+  "defaultProject": "my-store-app"
 }
