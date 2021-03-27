@@ -6,11 +6,5 @@ import { TopBarComponent } from '../top-bar/top-bar.component';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class ProductListComponent {
 }

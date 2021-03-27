@@ -3,13 +3,14 @@ import { Routes } from "@angular/router";
 import { AppComponent } from "./app.component";
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CartComponent } from './cart/cart.component';
 import { NativeScriptRouterModule } from "@nativescript/angular";
 import { from } from "rxjs";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/home", pathMatch: "full" },
-    { path: "home", component: ProductListComponent },
-    { path: "detail", component: ProductDetailsComponent }  
+    { path: '', component: ProductListComponent },
+    { path: 'products/:productId', component: ProductDetailsComponent },
+    { path: 'cart', component: CartComponent }
 ];
 
 @NgModule({

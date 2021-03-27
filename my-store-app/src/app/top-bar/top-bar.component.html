@@ -1,3 +1,9 @@
-<ActionBar title="My Store">
-
-</ActionBar>
+<Page.actionBar>
+    <ActionBar title="My Store" (tap)="toProductList()">
+        <ActionItem class="item-right" ios.position="right" (tap)="toCart()">
+            <StackLayout class="btn-img" orientation="horizontal">
+                <Image src="~/app/image/shopping-cart.png" width="8%" marginRight="20"></Image>
+            </StackLayout>
+        </ActionItem>
+    </ActionBar>
+</Page.actionBar>
