@@ -6,8 +6,8 @@
   <ListView class="list-view" [items]="products" separatorColor="transparent">
       <ng-template let-item="item" let-i="index">
         <StackLayout>
-          <GridLayout class="each-item" columns="auto" rows="auto,auto,auto" (tap)="toDetail(i)">
-            <Label row="0" col="0" class="product-name" [text]="item.name" textWrap="true"></Label>
+          <GridLayout class="each-item" columns="auto" rows="auto,auto,auto">
+            <Label row="0" col="0" class="product-name" [text]="item.name" textWrap="true" (tap)="toDetail(item.id)"></Label>
             <Label row="1" col="0" class="product-description" *ngIf="item.description" [text]="'Description : ' + item.description" textWrap="true"></Label>
             <Button row="2" col="0" class="share-btn -rounded-md" text="Share" (tap)="shareText(item.name)" horizontalAlignment="left"></Button>
           </GridLayout>

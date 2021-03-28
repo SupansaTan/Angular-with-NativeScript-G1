@@ -19,6 +19,6 @@ export class ProductListComponent {
   }
 
   public toDetail(id){
-    this.router.navigate(['products/:' + id ]);
+    this.router.navigate(['/products', id ]);
   }
 }

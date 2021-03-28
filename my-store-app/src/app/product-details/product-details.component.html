@@ -4,9 +4,9 @@
   
     <!-- products detail -->
     <GridLayout class="product-detail" columns="auto" rows="auto,auto,auto,auto">
-        <Label row="0" col="0" class="product-name" [text]="" textWrap="true"></Label>
-        <Label row="1" col="0" class="product-name" [text]="" textWrap="true"></Label>
-        <Label row="2" col="0" class="product-description" *ngIf="" [text]="" textWrap="true"></Label>
+        <Label row="0" col="0" class="product-name" [text]="product.name" textWrap="true"></Label>
+        <Label row="1" col="0" class="product-price" [text]="product.price | currency" textWrap="true"></Label>
+        <Label row="2" col="0" class="product-description" *ngIf="product.description" [text]="product.description" textWrap="true"></Label>
         <Button row="3" col="0" class="buy-btn -rounded-md" text="Buy" horizontalAlignment="left"></Button>
     </GridLayout>
 </StackLayout>
