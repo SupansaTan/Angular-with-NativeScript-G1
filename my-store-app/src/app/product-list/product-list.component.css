@@ -1,0 +1,34 @@
+.heading {
+    margin: 20px 20px 10px 50px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+
+.list-view {
+    margin: 20px;
+}
+
+.each-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fafafa;
+    border-radius: 25px;
+} 
+
+.product-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1976d2;
+}
+
+.product-description {
+    font-size: 14px;
+}
+
+.share-btn {
+    width: 30%;
+    color: white;
+    background-color: #1976d2;
+    font-size: 15px;
+}
