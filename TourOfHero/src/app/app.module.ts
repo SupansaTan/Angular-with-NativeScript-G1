@@ -17,7 +17,7 @@ import { HeroesComponent } from "./pages/heroes/heroes.component";
     ],
     imports: [
         NativeScriptModule,
-        AppRoutingModule
+        AppRoutingModule,
     ],
     declarations: [
         PageDirective,

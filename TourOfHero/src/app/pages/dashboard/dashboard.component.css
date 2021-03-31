@@ -11,3 +11,9 @@ Label {
     font-size: 20px;
     margin: 10;
 }
+
+Button {
+    width: 80%;
+    border-radius: 50%;
+    font-size: 16px;
+}

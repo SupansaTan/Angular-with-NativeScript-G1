@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component ({
     selector: "HeroDetail",
@@ -6,5 +6,6 @@ import { Component, OnInit } from "@angular/core";
 })
 
 export class HeroDetailComponent {
-   
+    id: number;
+   name: string;
 }

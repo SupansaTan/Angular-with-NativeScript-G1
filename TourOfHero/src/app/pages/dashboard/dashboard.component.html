@@ -1,14 +1,14 @@
 <StackLayout>
     <SearchBar hint="Search for a hero and press enter"
             [text]="searchPhrase" (textChange)="onTextChanged($event)" 
-            (clear)="onClear($event)" (submit)="onSubmit($event)">
+            (submit)="onSubmit($event)">
     </SearchBar>
 
     <Label text="Top Heroes" textAlignment="center"></Label>
 
-    <ListView [items]="heroes" separatorColor="transparent">
+    <ListView [items]="top_heroes" separatorColor="transparent">
         <ng-template let-item="item" let-i="index">
-            <Button [text]="item.name" (tap)="onTap(item.id)"></Button>
+            <Button [text]="item.name" (tap)="toDetail(item.id)"></Button>
         </ng-template>
     </ListView>
 
