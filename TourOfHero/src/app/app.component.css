@@ -5,4 +5,5 @@ TabView {
     android-selected-tab-highlight-color: #f9aa33;
     font-size: 15;
     font-weight: bold;
+    background-color: #EDF0F2;
 }

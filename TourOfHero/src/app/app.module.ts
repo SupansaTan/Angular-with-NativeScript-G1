@@ -8,7 +8,6 @@ import { DashboardComponent } from "./pages/dashboard/dashboard.component"
 import { TopBarComponent } from "./components/top-bar/top-bar.component"
 import { HeroListComponent } from "./components/hero-list/hero-list.component"
 import { HeroDetailComponent } from "./components/hero-detail/hero-detail.component"
-import { HeroCardComponent } from "./components/hero-card/hero-card.component"
 import { AddHeroComponent } from "./components/add-hero/add-hero.component"
 import { HeroesComponent } from "./pages/heroes/heroes.component";
 
@@ -27,7 +26,6 @@ import { HeroesComponent } from "./pages/heroes/heroes.component";
         TopBarComponent,
         HeroListComponent,
         HeroDetailComponent,
-        HeroCardComponent,
         AddHeroComponent,
         HeroesComponent
     ],
