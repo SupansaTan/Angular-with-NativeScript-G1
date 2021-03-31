@@ -3,11 +3,12 @@ import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "@nativescript/angular";
 
 import { DashboardComponent } from "./pages/dashboard/dashboard.component";
+import { HeroesComponent } from "./pages/heroes/heroes.component";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/dashboard", pathMatch: "full" },
-    { path: "dashboard", component: DashboardComponent},
-    
+    { path:  '', component: DashboardComponent },
+    { path: 'dashboard', component: DashboardComponent },
+    { path: 'heroes', component: HeroesComponent }
 ];
 
 @NgModule({
