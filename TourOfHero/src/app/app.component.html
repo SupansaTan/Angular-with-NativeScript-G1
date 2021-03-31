@@ -1,7 +1,13 @@
 <Frame>
   <Page>
     <TopBar></TopBar>
-    <page-router-outlet actionBarVisibility="never">
-    </page-router-outlet>
+    <TabView>
+        <StackLayout *tabItem="{title: 'Dashboard'}">
+          <Dashboard></Dashboard>
+        </StackLayout>
+        <StackLayout *tabItem="{title: 'Heroes'}"> 
+          <Heroes></Heroes>
+        </StackLayout>
+    </TabView>
   </Page>
 </Frame>

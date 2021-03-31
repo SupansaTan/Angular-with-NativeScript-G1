@@ -1,0 +1,8 @@
+TabView {
+    tab-text-color: #f3f2f2e5;
+    selected-tab-text-color: white;
+    tab-background-color: #232f34;
+    android-selected-tab-highlight-color: #f9aa33;
+    font-size: 15;
+    font-weight: bold;
+}
