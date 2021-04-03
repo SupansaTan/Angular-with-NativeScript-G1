@@ -1,4 +1,4 @@
-import {Component, OnInit } from "@angular/core";
+import {Component, OnInit, Input, Output } from "@angular/core";
 import { Hero } from '../../hero';
 import { HEROES } from '../../mock-heroes';
 import { HeroService } from '../../hero.service';
@@ -12,13 +12,18 @@ import { Router } from "@angular/router";
     styleUrls: ["./dashboard.component.css"]
 })
 
-export class DashboardComponent {
-    heroes = HEROES
-    top_heroes = this.heroes.slice(1,5);
+export class DashboardComponent implements OnInit{
+    @Input() heroes: Hero[];
+    top_heroes: Hero[];
     searchPhrase: string;
     private searchTerms = new Subject<string>();
 
     constructor(private router:Router) { }
+
+    ngOnInit(){
+        alert(this.heroes)
+        this.top_heroes = this.heroes.slice(1,5)
+    }
 
     /* methods for search bar */
     onSubmit(term: string) {

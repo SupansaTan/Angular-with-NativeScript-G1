@@ -3,7 +3,7 @@
     <TopBar></TopBar>
     <TabView>
         <StackLayout *tabItem="{title: 'Dashboard'}">
-          <Dashboard></Dashboard>
+          <Dashboard [heroes] = 'heroes'></Dashboard>
         </StackLayout>
         <StackLayout *tabItem="{title: 'Heroes'}"> 
           <Heroes></Heroes>
