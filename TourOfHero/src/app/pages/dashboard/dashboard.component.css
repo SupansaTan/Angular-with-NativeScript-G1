@@ -2,9 +2,16 @@ body {
     color: #2d2d2d;
 }
 
-SearchBar {
+GridLayout {
     margin: 30px;
-    font-weight: 400;
+}
+
+SearchBar {
+    background-color: #4A6572;
+    text-field-background-color: #ffffff;
+    text-field-hint-color: rgb(189, 184, 184);
+    border-color: #4A6572;
+    borderRadius: 20;
 }
 
 Label {
@@ -13,7 +20,7 @@ Label {
 }
 
 Button {
-    width: 80%;
-    border-radius: 50%;
+    margin: 10px;
+    border-radius: 30%;
     font-size: 16px;
 }
