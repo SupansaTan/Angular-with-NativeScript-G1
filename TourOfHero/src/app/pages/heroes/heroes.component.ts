@@ -1,5 +1,4 @@
 import {Component, OnInit } from "@angular/core";
-import { HEROES } from '../../mock-heroes';
 
 @Component ({
     selector: "Heroes",
@@ -7,5 +6,5 @@ import { HEROES } from '../../mock-heroes';
 })
 
 export class HeroesComponent {
-    heroes = HEROES;
+    
 }

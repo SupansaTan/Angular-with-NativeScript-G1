@@ -1,13 +1,6 @@
 <StackLayout>
     <Label text="My Heroes" textAlignment="center"></Label>
-    <Label text="Hero name: " for=""></Label>
-    <TextField hint="Enter Date" [text]='' secure="false" returnKeyType="done" autocorrect="false" maxLength="50">
-    </TextField>
-    <Button text="Add hero"></Button>
+    <AddHero></AddHero>
 
-    <ListView [items]="heroes" separatorColor="transparent">
-        <ng-template let-item="item" let-i="index">
-            <Button [text]="item.id + '&nbsp;' + item.name"></Button>
-        </ng-template>
-    </ListView>
+    <HeroList></HeroList>
 </StackLayout>

@@ -1,0 +1,5 @@
+<ListView [items]="heroes" separatorColor="transparent">
+    <ng-template let-item="item" let-i="index">
+        <Label [text]="item.id + '&nbsp;' + item.name"></Label>
+    </ng-template>
+</ListView>
