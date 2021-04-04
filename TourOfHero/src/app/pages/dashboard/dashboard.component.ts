@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit{
 
     constructor(private router:Router, heroService : HeroService ) { 
         this.heroes = heroService.getHeroes()
-        this.top_heroes = this.heroes.slice(1,5)
+        this.top_heroes = this.heroes.slice(0,4)
     }
 
     ngOnInit(){

@@ -1,5 +1,7 @@
-<ListView [items]="heroes" separatorColor="transparent">
-    <ng-template let-item="item" let-i="index">
-        <Label [text]="item.id + '&nbsp;' + item.name"></Label>
-    </ng-template>
-</ListView>
+<StackLayout id="stack">
+    <GridLayout *ngFor="let hero of heroes" rows="auto" columns="30, *, 10" class="hero-item">
+        <Label text="{{ hero.id }}" row="0" col="0"></Label>
+        <Label text="{{ hero.name }}" row="0" col="1" (tap)="edit(hero.id)"></Label>
+        <Label text="x" row="0" col="2" (tap)="remove(hero.id)"></Label>
+    </GridLayout>
+</StackLayout>

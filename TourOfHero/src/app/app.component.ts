@@ -16,21 +16,11 @@ export class AppComponent implements  OnInit{
     heroes: Hero[];
 
     constructor(private router: Router, heroService : HeroService){
-        const isFirst = AppSettings.getBoolean("isFirst")
 
-        if(isFirst == null){
-            this.heroes = HEROES
-            AppSettings.setString("HeroesData", JSON.stringify(HEROES))
-            AppSettings.setBoolean("isFirst", false)
-        }
-        else {
-            this.heroes = JSON.parse(AppSettings.getString("HeroesData"))
-            heroService.setHeroes(this.heroes)
-        }
     }
 
     public ngOnInit(){
-       
+
     }
 
     public onIndexChanged(title : string) {

@@ -10,13 +10,14 @@ import { NgModule } from "@angular/core";
 })
 
 export class AddHeroComponent {
-   hero_name : string;
+    hero_name : string;
 
-   constructor(private heroService : HeroService) { }
+    constructor(private heroService : HeroService) { }
 
-   addHero() {
-    if (this.hero_name != undefined || this.hero_name != null) {
-        this.heroService.addHero(this.hero_name)
+    addHero() {
+        if (this.hero_name != undefined || this.hero_name != null) { // have input in text field
+            this.heroService.addHero(this.hero_name)
+            this.hero_name = '' // clear text field
+        }
     }
-   }
 }

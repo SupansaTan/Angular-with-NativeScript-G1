@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import * as AppSettings from '@nativescript/core/application-settings'
@@ -10,14 +10,23 @@ import { HEROES } from './mock-heroes';
   providedIn: 'root'
 })
 export class HeroService {
-  heroes = [];
+  heroes : Hero[];
 
   constructor() { 
-    this.heroes = HEROES;
+    const isFirst = AppSettings.getBoolean("isFirst");
+
+    if(isFirst == null || isFirst == undefined){
+      this.heroes = HEROES;
+      AppSettings.setString("HeroesData", JSON.stringify(HEROES));
+      AppSettings.setBoolean("isFirst", false)
+    }
+    else {
+      this.heroes = JSON.parse(AppSettings.getString("HeroesData"));
+    }
   }
 
-  setHeroes(args) {
-    this.heroes = args;
+  getLength() { 
+    return this.heroes.length
   }
 
   getHeroes() {
@@ -26,13 +35,6 @@ export class HeroService {
 
   getHero(id: number) {
     return this.heroes[id];
-  }
-
-  updateHero(hero_name : string) {
-    if (this.heroes.find(x => x.name == hero_name) == undefined){ // hero_name not contain in heroes
-      const last_id = this.heroes[this.heroes.length-1]['id']
-      this.heroes.push({id: last_id+1, name: hero_name})
-    }
   }
 
   addHero(hero_name : string) {
@@ -48,6 +50,6 @@ export class HeroService {
   }
 
   searchHeroes(term: string) {
-    this.heroes.filter(x => x.name == term)[0];
+    return this.heroes.filter(x => x.name == term)[0];
   }
 }
