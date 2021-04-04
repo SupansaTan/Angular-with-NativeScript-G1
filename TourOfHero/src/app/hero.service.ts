@@ -10,7 +10,7 @@ import { HEROES } from './mock-heroes';
   providedIn: 'root'
 })
 export class HeroService {
-  heroes : Hero[];
+  heroes : Array<any>;
 
   constructor() { 
     const isFirst = AppSettings.getBoolean("isFirst");
@@ -40,13 +40,24 @@ export class HeroService {
   addHero(hero_name : string) {
     if (this.heroes.find(x => x.name == hero_name) == undefined){ // hero_name not contain in heroes
       const last_id = this.heroes[this.heroes.length-1]['id']
-      this.heroes.push({id: last_id+1, name: hero_name})
+      this.heroes.push(
+        {
+          id: last_id+1,
+          name: hero_name
+        }
+      );
       AppSettings.setString("HeroesData", JSON.stringify(this.heroes))
     }
   }
 
-  deleteHero(hero: Hero | number) {
-     
+  deleteHero(id : number) {
+    for(let i = 0; i < this.heroes.length; i++) {
+      if(this.heroes[i].id == id) {
+        this.heroes.splice(i, 1);
+        AppSettings.setString("HeroesData", JSON.stringify(this.heroes))
+        break;
+      }
+    }
   }
 
   searchHeroes(term: string) {

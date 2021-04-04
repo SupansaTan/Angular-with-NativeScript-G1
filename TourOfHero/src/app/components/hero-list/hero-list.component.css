@@ -1,0 +1,9 @@
+StackLayout {
+    margin: 30px;
+}
+
+.label-delete {
+    background-color: red;
+    color: white;
+    text-align: center;
+}

@@ -1,7 +1,13 @@
-<StackLayout id="stack">
-    <GridLayout *ngFor="let hero of heroes" rows="auto" columns="30, *, 10" class="hero-item">
-        <Label text="{{ hero.id }}" row="0" col="0"></Label>
-        <Label text="{{ hero.name }}" row="0" col="1" (tap)="edit(hero.id)"></Label>
-        <Label text="x" row="0" col="2" (tap)="remove(hero.id)"></Label>
-    </GridLayout>
+<StackLayout>
+    <ListView id="list-heroes" [items]="heroes" separatorColor="transparent">
+        <ScrollView>
+            <ng-template let-item="item" let-i="index">
+                <GridLayout rows="auto" columns="30, *, 30" class="hero-item">
+                    <Label text="{{ item.id }}" row="0" col="0"></Label>
+                    <Label text="{{ item.name }}" row="0" col="1" (tap)="edit(item.id)"></Label>
+                    <Label class="label-delete" text="X" row="0" col="2" (tap)="delete(item.id)"></Label>
+                </GridLayout>
+            </ng-template>
+        </ScrollView>
+    </ListView>
 </StackLayout>

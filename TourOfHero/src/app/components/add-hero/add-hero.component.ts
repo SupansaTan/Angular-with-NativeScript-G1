@@ -14,9 +14,9 @@ export class AddHeroComponent {
 
     constructor(private heroService : HeroService) { }
 
-    addHero() {
+    add() {
         if (this.hero_name != undefined || this.hero_name != null) { // have input in text field
-            this.heroService.addHero(this.hero_name)
+            this.heroService.addHero(this.hero_name);
             this.hero_name = '' // clear text field
         }
     }

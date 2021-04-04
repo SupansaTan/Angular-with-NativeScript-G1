@@ -1,19 +1,33 @@
 import { Component, OnInit, ViewChild, ElementRef  } from "@angular/core";
-import { HEROES } from '../../mock-heroes';
+import { ObservableArray, ChangedData } from "@nativescript/core/data/observable-array";
 import { HeroService } from "../../hero.service";
-import { Hero } from "../../hero"
-import { Label, ListView } from "@nativescript/core";
+import { Page, Label, ListView } from "@nativescript/core";
+import { Router } from "@angular/router";
 
 @Component ({
     selector: "HeroList",
     templateUrl: "./hero-list.component.html",
+    styleUrls: ["./hero-list.component.css"],
     providers: [HeroService],
 })
 
 export class HeroListComponent {
-    heroes : Hero[];
+    heroes : Array<any>;
 
-    constructor(private heroService: HeroService) {
+    constructor(public page:Page, private heroService: HeroService, private router: Router) {
         this.heroes = this.heroService.getHeroes()
+    }
+
+    refresh() {
+        var listview : ListView = <ListView>this.page.getViewById("list-heroes");
+        listview.refresh()
+    }
+
+    delete(id : number){
+        this.heroService.deleteHero(id)
+    }
+
+    edit(id: number) {
+        this.router.navigate(["/hero", id]);
     }
 }

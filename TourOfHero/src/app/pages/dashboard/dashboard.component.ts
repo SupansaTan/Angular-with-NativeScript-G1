@@ -13,8 +13,8 @@ import { Router } from "@angular/router";
 })
 
 export class DashboardComponent implements OnInit{
-    heroes: Hero[];
-    top_heroes: Hero[];
+    heroes: Array<any>;
+    top_heroes: Array<any>;
     searchPhrase: string;
     private searchTerms = new Subject<string>();
 
