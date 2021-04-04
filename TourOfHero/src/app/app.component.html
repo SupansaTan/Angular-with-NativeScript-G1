@@ -2,10 +2,10 @@
   <Page>
     <TopBar></TopBar>
     <TabView>
-        <StackLayout *tabItem="{title: 'Dashboard'}">
-          <Dashboard [heroes] = 'heroes'></Dashboard>
+        <StackLayout *tabItem="{title: 'Dashboard'}" (selectedIndexChange)="onIndexChanged('dashboard')">
+          <Dashboard></Dashboard>
         </StackLayout>
-        <StackLayout *tabItem="{title: 'Heroes'}"> 
+        <StackLayout *tabItem="{title: 'Heroes'}" (selectedIndexChange)="onIndexChanged('heores')"> 
           <Heroes></Heroes>
         </StackLayout>
     </TabView>

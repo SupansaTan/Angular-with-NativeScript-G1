@@ -1,4 +1,5 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
+import { NativeScriptCommonModule, NativeScriptFormsModule } from "@nativescript/angular";
 import { NativeScriptModule } from "@nativescript/angular";
 import { PageDirective } from "./page.directive";
 
@@ -10,6 +11,7 @@ import { HeroListComponent } from "./components/hero-list/hero-list.component"
 import { HeroDetailComponent } from "./components/hero-detail/hero-detail.component"
 import { AddHeroComponent } from "./components/add-hero/add-hero.component"
 import { HeroesComponent } from "./pages/heroes/heroes.component";
+import { HeroService } from "./hero.service";
 
 @NgModule({
     bootstrap: [
@@ -17,6 +19,8 @@ import { HeroesComponent } from "./pages/heroes/heroes.component";
     ],
     imports: [
         NativeScriptModule,
+        NativeScriptCommonModule,
+        NativeScriptFormsModule,
         AppRoutingModule,
     ],
     declarations: [
@@ -29,7 +33,7 @@ import { HeroesComponent } from "./pages/heroes/heroes.component";
         AddHeroComponent,
         HeroesComponent
     ],
-    providers: [],
+    providers: [HeroService],
     schemas: [
         NO_ERRORS_SCHEMA
     ]

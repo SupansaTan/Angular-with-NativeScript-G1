@@ -13,16 +13,18 @@ import { Router } from "@angular/router";
 })
 
 export class DashboardComponent implements OnInit{
-    @Input() heroes: Hero[];
+    heroes: Hero[];
     top_heroes: Hero[];
     searchPhrase: string;
     private searchTerms = new Subject<string>();
 
-    constructor(private router:Router) { }
+    constructor(private router:Router, heroService : HeroService ) { 
+        this.heroes = heroService.getHeroes()
+        this.top_heroes = this.heroes.slice(1,5)
+    }
 
     ngOnInit(){
-        alert(this.heroes)
-        this.top_heroes = this.heroes.slice(1,5)
+        
     }
 
     /* methods for search bar */
