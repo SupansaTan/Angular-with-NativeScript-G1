@@ -34,7 +34,7 @@ export class HeroService {
   }
 
   getHero(id: number) {
-    return this.heroes[id];
+    return this.heroes.filter(x => x.id == id)[0];
   }
 
   addHero(hero_name : string) {
