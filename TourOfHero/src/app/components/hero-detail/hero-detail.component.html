@@ -1,7 +1,7 @@
 <StackLayout>
     <Label text="Detail of Hero" textAlignment="center"></Label>
-    <Label text="<heroname> detail"></Label>
-    <label text="id : <id>"></label>
-    <TextField hint="Enter Date" [text]='name' ></TextField>
+    <Label [text]="'name: '+hero.name"></Label>
+    <label [text]="'id: '+hero.id"></label>
+    <TextField hint="Enter Date" [text]="hero.name" ></TextField>
     <Button text="save"></Button>
 </StackLayout>
