@@ -1,6 +1,7 @@
+ 
 import { Component, OnInit } from "@angular/core";
 import * as AppSettings from '@nativescript/core/application-settings'
-import { Router } from '@angular/router'
+
 
 import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
@@ -15,7 +16,7 @@ import { HeroService } from "./hero.service";
 export class AppComponent implements  OnInit{ 
     heroes: Hero[];
 
-    constructor(private router: Router, heroService : HeroService){
+    constructor(private  heroService : HeroService){
 
     }
 
@@ -23,12 +24,6 @@ export class AppComponent implements  OnInit{
 
     }
 
-    public onIndexChanged(title : string) {
-        if (title == 'dashboard') {
-            this.router.navigate(['/dashboard'])
-        }
-        else if (title == 'heroes') {
-            this.router.navigate(['/heroes'])
-        }
-    }
+    
+    
 }

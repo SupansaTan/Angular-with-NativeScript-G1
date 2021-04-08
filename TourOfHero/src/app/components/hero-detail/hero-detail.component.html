@@ -2,7 +2,7 @@
     <Label text="Detail of Hero" textAlignment="center"></Label>
     <Label [text]="'name: '+hero.name"></Label>
     <label [text]="'id: '+hero.id"></label>
-    <TextField hint="Enter Date" [text]="hero.name" ></TextField>
-    <Button text="save"></Button>
+    <TextField #name hint="Enter Date" [text]="hero.name" ></TextField>
+    <Button text="save"(tap)=save(hero.id,name.text)></Button>
     <Button text="back" (tap)=back()></Button>
 </StackLayout>

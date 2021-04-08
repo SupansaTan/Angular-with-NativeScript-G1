@@ -49,4 +49,12 @@ export class DashboardComponent implements OnInit{
     toDetail(id) {
         this.router.navigate(['/detail', id ]);
     }
+    public onIndexChanged(title : string) {
+        if (title == 'dashboard') {
+            this.router.navigate(['/dashboard'])
+        }
+        else if (title == 'heroes') {
+            this.router.navigate(['/heroes'])
+        }
+    }
 }

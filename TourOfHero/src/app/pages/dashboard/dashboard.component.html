@@ -1,16 +1,21 @@
-<StackLayout>
-    <SearchBar #searchBar hint="Search for a hero and press enter"
-    [text]="searchPhrase" (textChange)="onTextChanged($event)" 
-    (submit)="onSubmit($event)" textFieldBackgroundColor="#f1efef" >
-    </SearchBar>
-
-    <Label text="Top Heroes" textAlignment="center"></Label>
-
-    <GridLayout>
-        <ListView [items]="top_heroes" separatorColor="transparent">
-            <ng-template let-item="item" let-i="index">
-                <Button [text]="item.name" (tap)="toDetail(item.id)"></Button>
-            </ng-template>
-        </ListView>
-    </GridLayout>
-</StackLayout>
+<TabView>
+    <StackLayout *tabItem="{title: 'Dashboard'}" (tab)="onIndexChanged('dashboard')">
+        <SearchBar #searchBar hint="Search for a hero and press enter"
+        [text]="searchPhrase" (textChange)="onTextChanged($event)" 
+        (submit)="onSubmit($event)" textFieldBackgroundColor="#f1efef" >
+        </SearchBar>
+    
+        <Label text="Top Heroes" textAlignment="center"></Label>
+    
+        <GridLayout>
+            <ListView [items]="top_heroes" separatorColor="transparent">
+                <ng-template let-item="item" let-i="index">
+                    <Button [text]="item.name" (tap)="toDetail(item.id)"></Button>
+                </ng-template>
+            </ListView>
+        </GridLayout>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Heroes'}" (tab)="onIndexChanged('heroes')"> 
+        <Heroes></Heroes>
+      </StackLayout>
+</TabView>

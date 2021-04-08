@@ -12,6 +12,7 @@ import { Location} from "@angular/common";
 
 export class HeroDetailComponent {
     hero;
+    hero_name:string;
    constructor(private route: ActivatedRoute,
                private heroService: HeroService,
                private location: Location) {}
@@ -19,7 +20,10 @@ export class HeroDetailComponent {
     const routeParams = this.route.snapshot.paramMap;
     const id = Number(routeParams.get('id'));
     this.hero = this.heroService.getHero(id);
-    console.log(this.hero);
+  }
+  save(id,hero_name){
+    this.heroService.save(id,hero_name);
+    this.location.back();
   }
   back(){
       this.location.back();

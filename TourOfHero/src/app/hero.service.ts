@@ -59,6 +59,14 @@ export class HeroService {
       }
     }
   }
+  save(id : number,hero_name : string) {
+    for(let i = 0; i < this.heroes.length; i++) {
+      if(this.heroes[i].id == id) {
+        this.heroes[i].name == hero_name
+        break;
+      }
+    }
+  }
 
   searchHeroes(term: string) {
     return this.heroes.filter(x => x.name == term)[0];

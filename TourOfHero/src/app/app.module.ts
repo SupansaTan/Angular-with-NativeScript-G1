@@ -13,6 +13,7 @@ import { AddHeroComponent } from "./components/add-hero/add-hero.component"
 import { HeroesComponent } from "./pages/heroes/heroes.component";
 import { HeroService } from "./hero.service";
 
+
 @NgModule({
     bootstrap: [
         AppComponent
@@ -31,7 +32,8 @@ import { HeroService } from "./hero.service";
         HeroListComponent,
         HeroDetailComponent,
         AddHeroComponent,
-        HeroesComponent
+        HeroesComponent,
+       
     ],
     providers: [HeroService],
     schemas: [
