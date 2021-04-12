@@ -4,7 +4,7 @@
             <ng-template let-item="item" let-i="index">
                 <GridLayout rows="auto" columns="30, *, 30" class="hero-item">
                     <Label text="{{ item.id }}" row="0" col="0"></Label>
-                    <Label text="{{ item.name }}" row="0" col="1" (tap)="edit(item.id)"></Label>
+                    <Label text="{{ item.name }}" row="0" col="1" (tap)="toDetail(item.id)"></Label>
                     <Label class="label-delete" text="X" row="0" col="2" (tap)="delete(item.id)"></Label>
                 </GridLayout>
             </ng-template>

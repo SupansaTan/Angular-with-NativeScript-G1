@@ -27,7 +27,8 @@ export class HeroListComponent {
         this.heroService.deleteHero(id)
     }
 
-    edit(id: number) {
-        this.router.navigate(["/hero", id]);
+    toDetail(id: number) {
+        this.router.navigate(['/detail', id ]);
     }
+  
 }
