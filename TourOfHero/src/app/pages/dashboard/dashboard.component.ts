@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit{
     searchPhrase: string;
     private searchTerms = new Subject<string>();
 
-    constructor(private router:Router, heroService : HeroService ) { 
+    constructor(private router:Router, private heroService : HeroService ) { 
         this.heroes = heroService.getHeroes()
         this.top_heroes = this.heroes.slice(0,4)
     }
@@ -37,12 +37,10 @@ export class DashboardComponent implements OnInit{
         console.log(`Input changed! New value: ${searchBar.text}`);
     }
 
-    searchHeroes(term: string) {
-        Object.keys(this.heroes).forEach(key => {
-            if (this.heroes[key].name === term) {
-                this.router.navigate(['/detail', this.heroes[key].id ]);
-            }
-        });
+    searchHeroes(term) {
+        const searchBar = term.object;
+        let hero = this.heroService.searchHeroes(searchBar.text)
+        this.router.navigate(['/detail', hero.id ]);
     }
 
     /* buttons of top heroes */

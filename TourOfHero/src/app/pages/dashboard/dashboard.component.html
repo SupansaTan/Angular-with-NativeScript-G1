@@ -2,7 +2,7 @@
     <StackLayout *tabItem="{title: 'Dashboard'}" (tab)="onIndexChanged('dashboard')">
         <SearchBar #searchBar hint="Search for a hero and press enter"
         [text]="searchPhrase" (textChange)="onTextChanged($event)" 
-        (submit)="onSubmit($event)" textFieldBackgroundColor="#f1efef" >
+        (submit)="searchHeroes($event)" textFieldBackgroundColor="#f1efef" >
         </SearchBar>
     
         <Label text="Top Heroes" textAlignment="center"></Label>
